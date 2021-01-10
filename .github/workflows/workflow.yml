@@ -9,7 +9,7 @@ jobs:
         operating-system: [ubuntu-latest, windows-latest]
     steps:
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@v2
 
     - name: Set Node.js 10.x
       uses: actions/setup-node@master
@@ -30,15 +30,14 @@ jobs:
       matrix:
         operating-system: [ubuntu-latest, windows-latest, macOS-latest]
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     
     - name: Install hub
-      uses: geertvdc/setup-hub@master
+      uses: krdlab/setup-hub@master
       
-    - name: run hub
+    - name: Run hub
       env:
         GITHUB_USER: ${{ secrets.GITHUB_USER }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
            hub --version
-           hub release
