@@ -33,7 +33,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Install hub
-      uses: krdlab/setup-hub@master
+      uses: ./
       
     - name: Run hub
       env:
